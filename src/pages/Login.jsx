@@ -2,9 +2,11 @@ import axios from 'axios';
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { AuthContex } from '../provider/AuthProvider';
+import { Link, useNavigate } from 'react-router';
 
 
 export default function Login() {
+    let navigate = useNavigate();
     const { user, setUser } = useContext(AuthContex)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = async (data) => {
@@ -16,6 +18,11 @@ export default function Login() {
         localStorage.setItem("access", res?.data?.access);
         localStorage.setItem("refresh", res?.data?.refresh);
 
+
+        if (res?.data?.user) {
+            navigate('/dashboard/chat')
+        }
+
         setUser(res?.data?.user)
         console.log("user", user)
         console.log("Res?.data", res?.data)
@@ -25,8 +32,8 @@ export default function Login() {
     return (
         <div className='flex justify-center items-center mt-[100px]'>
             <div className='border-2 w-[500px] p-10 rounded-2xl'>
-                <h1 className='text-4xl sm:text-5xl font-bold text-gray-900  '>Log in to Account</h1>
-                <h5 className='mt-6 text-sm text-gray-600  '>Sign in below to access your account</h5>
+                <h1 className='text-4xl sm:text-5xl font-bold text-gray-900'>Log in to Account</h1>
+                <h5 className='mt-6 text-sm text-gray-600 '>Sign in below to access your account</h5>
                 <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-6 '>
                     <div>
                         <div>Email</div>
@@ -44,6 +51,13 @@ export default function Login() {
 
                     <input type="submit" className='w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' />
                 </form>
+                <div className='mt-2'>
+                    <p className='font-semibold text-sm text-slate-500 text-left'>Don't have an account?
+                        <Link to={'/signup'} className='underline' >
+                            Register
+                        </Link>
+                    </p>
+                </div>
             </div>
         </div>
     )

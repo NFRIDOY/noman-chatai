@@ -2,8 +2,10 @@ import axios from 'axios';
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { AuthContex } from '../provider/AuthProvider';
+import { useNavigate } from 'react-router';
 
-export default function Reg()  {
+export default function Reg() {
+    let navigate = useNavigate();
     const { user, setUser } = useContext(AuthContex)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = async (data) => {
@@ -18,6 +20,10 @@ export default function Reg()  {
         setUser(true)
         console.log("user", user)
         console.log("Res?.data", res?.data)
+
+        if (!user) {
+            navigate('/login')
+        }
     };
     console.log("userContext", user, setUser)
 
@@ -43,6 +49,13 @@ export default function Reg()  {
 
                     <input type="submit" className='w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' />
                 </form>
+                <div className='mt-2'>
+                    <p className='font-semibold text-sm text-slate-500 text-left'>Don't have an account?
+                        <Link to={'/login'} className='underline' >
+                            Login
+                        </Link>
+                    </p>
+                </div>
             </div>
         </div>
     )
