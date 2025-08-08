@@ -7,7 +7,7 @@ export default function Dashboard() {
         <>
             <DashboardNavbar />
             <div className='flex flex-row items-start justify-between'>
-                <aside className='border h-screen w-[200px] pt-5 bg-indigo-50' >
+                <aside className='h-screen w-[200px] pt-5 bg-gray-100 ' >
                     <ol className="flex flex-col gap-5  *:border-b-2 *:pb-5 *:pl-5 text-2xl">
                         <li>
                             <NavLink to={"/dashboard/chat"}>
@@ -27,7 +27,7 @@ export default function Dashboard() {
                     </ol>
                 </aside>
                 <div className=' w-full '>
-                    <div className='text-3xl flex flex-row justify-center  border-b'>
+                    <div className='text-3xl flex flex-row justify-center  '>
                         {/* Dashboard */}
                     </div>
                     <Outlet />

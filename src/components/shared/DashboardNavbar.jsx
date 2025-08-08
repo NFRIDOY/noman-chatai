@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function DashboardNavbar() {
     return (
-        <div className="flex flex-row items-center justify-between mx-2 my-2">
+        <div className="flex flex-row items-center justify-between py-4 px-2 bg-gray-100 ">
             <div>
                 <NavLink to={"/"}>
                     Gameplan
