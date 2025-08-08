@@ -43,7 +43,7 @@ export default function Chat() {
                     <div className='px-2'>
                         {
                             chats?.map((msg, index) => <div key={index} className='py-2 my-2 relative'>
-                                <div className={(msg?.sender === 'u') ? 'text-right rounded-lg p-4 bg-gray-100 text-black w-fit ' : 'text-left max-w-[70%] rounded-lg p-4 bg-indigo-50 dark:bg-opacity-0 border border-indigo-500 text-indigo-500 dark:text-white'}>
+                                <div className={(msg?.sender === 'u') ? 'text-right rounded-lg p-4 text-black ' : 'text-left max-w-[70%] rounded-lg p-4 bg-indigo-50 dark:bg-opacity-0 border border-indigo-500 text-indigo-500 dark:text-white'}>
                                     {msg?.message}
                                 </div>
                             </div>

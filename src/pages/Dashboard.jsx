@@ -23,8 +23,8 @@ export default function Dashboard() {
                     </li>
                 </ol>
             </aside>
-            <div>
-                <div className='text-3xl w-full flex flex-row justify-center  border-b'>
+            <div className=' w-full '>
+                <div className='text-3xl flex flex-row justify-center  border-b'>
                     Dashboard
                 </div>
                 <Outlet />
