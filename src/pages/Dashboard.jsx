@@ -21,11 +21,6 @@ export default function Dashboard() {
                             Sign Up
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to={"/signout"}>
-                            Sign Out
-                        </NavLink>
-                    </li>
                 </ol>
             </aside>
             <div>
