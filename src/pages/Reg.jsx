@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { AuthContex } from '../provider/AuthProvider';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 export default function Reg() {
     let navigate = useNavigate();
