@@ -1,15 +1,28 @@
+import { NavLink } from "react-router";
+
 export default function Navbar() {
     return (
-        <div>
-            <ol>
+        <div className="flex flex-row justify-between mx-10 my-10">
+            <div>
+                <NavLink to={"/"}>
+                    Gameplan
+                </NavLink>
+            </div>
+            <ol className="flex flex-row gap-5">
                 <li>
-                    Home
+                    <NavLink to={"/"}>
+                        Home
+                    </NavLink>
                 </li>
                 <li>
-                    Login
+                    <NavLink to={"/login"}>
+                        Login
+                    </NavLink>
                 </li>
                 <li>
-                    Sign Up
+                    <NavLink to={"/signup"}>
+                        Sign Up
+                    </NavLink>
                 </li>
             </ol>
         </div>
