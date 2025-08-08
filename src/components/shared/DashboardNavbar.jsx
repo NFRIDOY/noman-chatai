@@ -4,7 +4,7 @@ export default function DashboardNavbar() {
     return (
         <div className="flex flex-row items-center justify-between py-4 px-2 bg-gray-100 ">
             <div>
-                <NavLink to={"/"}>
+                <NavLink to={"/"} className='text-2xl'>
                     Gameplan
                 </NavLink>
             </div>

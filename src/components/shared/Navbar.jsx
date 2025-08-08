@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <div className="flex flex-row justify-between mx-10 my-10">
             <div>
-                <NavLink to={"/"}>
+                <NavLink to={"/"} className='text-4xl' >
                     Gameplan
                 </NavLink>
             </div>
@@ -12,6 +12,11 @@ export default function Navbar() {
                 <li>
                     <NavLink to={"/"}>
                         Home
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to={"/dashboard/chat"}>
+                        Chat
                     </NavLink>
                 </li>
                 <li>
