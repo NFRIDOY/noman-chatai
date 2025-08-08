@@ -8,7 +8,7 @@ export default function Navbar() {
                 <NavLink to={"/"} className='text-4xl' >
                     {/* Gameplan */}
                     <span className="flex flex-row items-center justify-start space-x-0.5">
-                        <img src={logo} alt="" srcset="" className="size-10"/> 
+                        <img src={logo} alt="" srcSet="" className="size-10"/> 
                         <span>
                             gameplan
                         </span>

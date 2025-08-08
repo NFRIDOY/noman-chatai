@@ -3,9 +3,19 @@ import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { AuthContex } from '../provider/AuthProvider';
 import { Link, useNavigate } from 'react-router';
+import { settoken, removetoken } from '../redux/features/authState/authStateSlice'
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Login() {
+    // const access = useSelector( async (state) => await state?.auth?.value)
+    const access = useSelector((state) => state?.auth) // Synchronous selector
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        console.log("Access Redux updated:", access);
+    }, [access]);
+
     let navigate = useNavigate();
     const { user, setUser } = useContext(AuthContex)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -17,6 +27,10 @@ export default function Login() {
         }
         localStorage.setItem("access", res?.data?.access);
         localStorage.setItem("refresh", res?.data?.refresh);
+        // console.log("res?.data?.access", res?.data?.access)
+        // ( async () =>  dispatch( await settoken(res?.data?.access)))()
+        dispatch(settoken(res?.data?.access))
+
 
 
         if (res?.data?.user) {
@@ -28,6 +42,8 @@ export default function Login() {
         console.log("Res?.data", res?.data)
     };
     console.log("userContext", user)
+
+
 
     return (
         <div className='flex justify-center items-center mt-[100px]'>

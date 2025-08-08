@@ -22,7 +22,7 @@ export default function Banner() {
                 <p>* No credit card required</p>
             </div>
             <div>
-                <img src={bannerImg} alt="" srcset="" />
+                <img src={bannerImg} alt="" srcSet="" />
             </div>
         </div>
     )
