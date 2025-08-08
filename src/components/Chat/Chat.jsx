@@ -40,6 +40,10 @@ export default function Chat() {
         <div>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='h-[900px] flex flex-col justify-between'>
+                    {
+                        (chats?.length == 0) ? <div className='flex justify-center items-center h-full'>
+                            No messages yet. Start a new conversation!
+                        </div> : <>
                     <div className='px-2'>
                         {
                             chats?.map((msg, index) => <div key={index} className='py-2 my-2 relative'>
@@ -50,6 +54,8 @@ export default function Chat() {
                             )
                         }
                     </div>
+                        </>
+                    }
                     {/* <input {...register("message", { required: true })} placeholder="Type your message (Shift + Enter for new line)" class="flex-1 p-3 py-5 border dark:border-gray-600 dark:placeholder:text-gray-100 rounded-lg resize-none focus:outline-none focus:ring focus:border-indigo-500  dark:bg-gray-700 dark:text-white placeholder:text-sm" style="overflow: hidden;"></input> */}
                     {/* {errors.messageRequired && <span>This field is required</span>} */}
                     <div className='w-full p-2 space-y-2'>
