@@ -5,7 +5,7 @@ export default function Dashboard() {
     return (
         <div className='flex flex-row items-start justify-between'>
             <aside className='border h-screen w-[200px] pt-10' >
-                <ol className="flex flex-col gap-5 justify-center *:mx-auto *:border-b-2 text-2xl">
+                <ol className="flex flex-col gap-5  *:border-b-2 *:pb-5 *:pl-5 text-2xl">
                     <li>
                         <NavLink to={"/dashboard/chat"}>
                             Chat
@@ -29,7 +29,7 @@ export default function Dashboard() {
                 </ol>
             </aside>
             <div>
-                <div className='text-3xl w-full flex flex-row justify-center  border'>
+                <div className='text-3xl w-full flex flex-row justify-center  border-b'>
                     Dashboard
                 </div>
                 <Outlet />
